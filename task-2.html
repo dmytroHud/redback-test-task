@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Task 2</title>
+</head>
+<body>
+
+<style>
+	*, *:after, *:before {
+		--blue: #0F8AD8;
+		--green: #00A74D;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		line-height: 1;
+        color: #fff;
+	}
+
+	body {
+		background-color: #E4E4E4;
+	}
+
+	.grid-wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+
+	.grid {
+		width: 1000px;
+		height: 400px;
+		display: flex;
+	}
+
+	.grid__column {
+		padding: 20px;
+		height: 100%;
+		background-color: #FFFFFF;
+	}
+
+	.grid__column--left {
+		width: 50%;
+	}
+
+	.grid__column--center {
+		width: 25%;
+	}
+
+	.grid__column--right {
+		width: 25%;
+	}
+
+	.grid__inner {
+		height: 100%;
+		display: flex;
+		margin-left: -10px;
+		margin-right: -10px;
+		padding: 40px;
+		font-family: "Helvetica";
+	}
+
+	.grid__column--left .grid__inner {
+		background-color: var(--blue);
+		align-items: flex-end;
+		margin-left: 0;
+	}
+
+	.grid__column--center .grid__inner {
+		background-color: var(--green);
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.grid__column--right .grid__inner {
+		background-color: var(--blue);
+		margin-right: 0;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.grid__heading {
+		font-weight: 400;
+	}
+
+	.grid__link {
+		text-transform: uppercase;
+		font-size: 12px;
+		text-decoration: none;
+		color: inherit;
+		letter-spacing: 1.2px;
+	}
+
+	.grid__column--left .grid__heading {
+		font-size: 80px;
+	}
+
+	.grid__column--center .grid__heading {
+		font-size: 40px;
+	}
+
+	.grid__column--right .grid__heading {
+		font-size: 40px;
+	}
+
+</style>
+
+
+<div class="grid-wrap">
+    <div class="grid">
+        <div class="grid__column grid__column--left">
+            <div class="grid__inner">
+                <div class="grid__heading">
+                    Hello
+                </div>
+            </div>
+        </div>
+        <div class="grid__column grid__column--center">
+            <div class="grid__inner">
+                <div class="grid__heading">
+                    Top
+                </div>
+                <a href="#" class="grid__link">
+                    Read More
+                </a>
+            </div>
+        </div>
+        <div class="grid__column grid__column--right">
+            <div class="grid__inner">
+                <div class="grid__heading">
+                    Middle
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
