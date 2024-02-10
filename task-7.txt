@@ -1,0 +1,19 @@
+On my opinion, Elementor is very flexible builder built by developers for developers.
+Easy to use and it is relatively fast. Good documentation, extremely simple to add new widgets using OOP interface
+Many good features like custom queries, ability to add your own custom controls and many more.
+There are some downsides as well, I don't know if it was already fixed, but when I was working with this builder last time,
+the "backend" widgets controls actually been working on the frontend as well. For example, if you have a simple select control with
+posts in your custom widget, you MUST load those posts via AJAX pagination, otherwise Elementor will grab all posts from DB not only
+while editing the page, but also each time when user open the page.
+Additionally, to create a custom widget, you need to extend Base_Widget elementor class so, Elementor can register and use your widget.
+The problem here is that this is happening relatively late, so if your widget should check some value on 'init' or 'wp' hook,
+you cannot do this by just adding a handler for this hook in your widget __construct(), because it will be called after those hooks.
+
+Last time when I was working with DIVI it was much worse than Elementor. Much slower, less friendly to developer in many ways.
+The process of creating custom widgets is more complex, because you need to use ReactJS for that, which means setup build process, etc.
+And overall, DIVI just much heavier than Elementor, I don't know if they still using shortcods in a core of the builder, if so,
+it makes the page loading process much slower than Elementor, because elementor jus using a simple JSON object where all widgets are stored.
+I also remember a time, when I was needed to clean a local storage each time when I made some changes in my custom DIVI widget,
+just to see those widgets.
+As for good sides, DIVI works better out of the box, you don't need to go through typography, colors, grid setup.
+Everything is setuped by default and, out of the box, looks much better than Elementor
