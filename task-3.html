@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task 3</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<style>
+	.button {
+		background: #444;
+		border: none;
+		color: #fff;
+		font-size: 16px;
+		padding: 5px 10px;
+	}
+
+	.button--active {
+		background: red;
+	}
+</style>
+
+<button class="button js-button" id="button">
+    Open
+</button>
+
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            let $button = $('#button');
+            let initialText = $button.text();
+            let activeText = "Close";
+
+            $button.on('click', function () {
+                $(this).toggleClass('button--active');
+                $button.text($button.text() === initialText ? activeText : initialText);
+            });
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
